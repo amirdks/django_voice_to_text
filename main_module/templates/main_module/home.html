@@ -1,0 +1,34 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/audioplay.js' %}"></script>
+    <script src="{% static 'js/recorder.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+</head>
+<body>
+
+<div id="viz">
+    <canvas id="analyser" width="1024" height="500"></canvas>
+    <canvas id="wavedisplay" width="1024" height="500"></canvas>
+</div>
+<form method="post" id="audio-form" action="{% url 'home_view' %}">
+    {% csrf_token %}
+</form>
+<div id="controls">
+    <img id="record" src="{% static 'images/mic128.png' %}" onclick="toggleRecording(this);">
+    <a id="save" href="#">save
+        <img src="{% static 'images/mic128.png' %}" alt="">
+    </a>
+</div>
+<script>
+
+</script>
+</body>
+</html>
